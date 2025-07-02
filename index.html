@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <!-- <li><a href="#services">Services</a></li> -->
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Computer Science Student</p>
+                <h1>Hi, I'm <span>Jeffrey</span></h1>
+            </div>
+        </div>
+    </div>
+<!----------------------------About-me---------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>My name is Jeffrey Cuevas, and I am a Computer Science student at the Mapúa Malayan Colleges Laguna. I am always eager to learn new skills and improve my knowledge in the field.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('tech-stack')">Tech Stack</p>
+                        <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="tech-stack">
+                        <div class="tech-stack">
+                            <a class="tech-item" href="https://isocpp.org/" target="_blank" rel="noopener"><img src="images/icons/cpp.png" alt="C++"><span>C++</span></a>
+                            <a class="tech-item" href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank" rel="noopener"><img src="images/icons/csharp.png" alt="C#"><span>C#</span></a>
+                            <a class="tech-item" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener"><img src="images/icons/js.png" alt="JavaScript"><span>JavaScript</span></a>
+                            <a class="tech-item" href="https://www.python.org/" target="_blank" rel="noopener"><img src="images/icons/python.png" alt="Python"><span>Python</span></a>
+                            <a class="tech-item" href="https://react.dev/" target="_blank" rel="noopener"><img src="images/icons/react.png" alt="React"><span>React</span></a>
+                            <a class="tech-item" href="https://getbootstrap.com/" target="_blank" rel="noopener"><img src="images/icons/bootstrap.png" alt="Bootstrap"><span>Bootstrap</span></a>
+                            <a class="tech-item" href="https://tailwindcss.com/" target="_blank" rel="noopener"><img src="images/icons/tailwind.png" alt="Tailwind"><span>Tailwind</span></a>
+                            <a class="tech-item" href="https://nodejs.org/" target="_blank" rel="noopener"><img src="images/icons/nodejs.png" alt="Node.js"><span>Node.js</span></a>
+                            <a class="tech-item" href="https://dotnet.microsoft.com/" target="_blank" rel="noopener"><img src="images/icons/net.png" alt=".NET"><span>.NET</span></a>
+                            <a class="tech-item" href="https://dotnet.microsoft.com/apps/aspnet" target="_blank" rel="noopener"><img src="images/icons/aspnet.png" alt="ASP.NET"><span>ASP.NET</span></a>
+                            <a class="tech-item" href="https://www.mysql.com/" target="_blank" rel="noopener"><img src="images/icons/mysql.png" alt="MySQL"><span>MySQL</span></a>
+                            <a class="tech-item" href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noopener"><img src="images/icons/mssql.png" alt="MS SQL"><span>MS SQL</span></a>
+                            <a class="tech-item" href="https://www.postgresql.org/" target="_blank" rel="noopener"><img src="images/icons/psql.png" alt="PostgreSQL"><span>PostgreSQL</span></a>
+                            <a class="tech-item" href="https://www.sqlite.org/" target="_blank" rel="noopener"><img src="images/icons/sqlite.png" alt="Sqlite"><span>Sqlite</span></a>
+                            <a class="tech-item" href="https://git-scm.com/" target="_blank" rel="noopener"><img src="images/icons/git.png" alt="Git"><span>Git</span></a>
+                            <a class="tech-item" href="https://kernel.org/" target="_blank" rel="noopener"><img src="images/icons/linux.png" alt="Linux"><span>Linux</span></a>
+                            <a class="tech-item" href="https://www.microsoft.com/en-us/windows" target="_blank" rel="noopener"><img src="images/icons/windows.png" alt="Windows"><span>Windows</span></a>
+                            <a class="tech-item" href="https://code.visualstudio.com/" target="_blank" rel="noopener"><img src="images/icons/vscode.png" alt="VSCode"><span>VSCode</span></a>
+                            <a class="tech-item" href="https://github.com/" target="_blank" rel="noopener"><img src="images/icons/github.png" alt="Github"><span>Github</span></a>
+                            <a class="tech-item" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener"><img src="images/icons/fastapi.png" alt="FastAPI"><span>FastAPI</span></a>
+                        </div>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Internship (2025 - Current)</span><br>PetroEnergy Resources Corporation</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>BS Computer Science</span><br>Mapúa Malayan Colleges Laguna</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------Services-------------------------- -->
+    <!--
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">Services</h1>
+                <div class="services-list">
+                </div>
+            </div>
+        </div>
+    -->    
+    <!-- --------------------------Portfolio-------------------------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">Project</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work1.png" alt="Internship Project Screenshot">
+                    <div class="layer">
+                        <h3>Internship</h3>
+                        <p>This is the project we did with my team on our Internship</p>
+                        <a href="#" class="btn" title="View Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See More</a>
+        </div>
+    </div>
+    <!-- --------------------------Contact-Me-------------------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> jeffreycvsp@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 0999372798</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/Jayhoodini" title="Github"><i class="fa-brands fa-square-github"></i></a>
+                        <a href="https://www.linkedin.com/in/jeffreylcuevas/" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------------------FOOTER-------------------------- -->
+
+    <footer class="footer">
+        <p>&copy; 2025 Jeffrey Cuevas</p>
+    </footer>
+    <script>
+    function openTab(tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-contents");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active-tab");
+        }
+        tablinks = document.getElementsByClassName("tab-links");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active-link");
+        }
+        document.getElementById(tabName).style.display = "block";
+        document.getElementById(tabName).classList.add("active-tab");
+        event.currentTarget.classList.add("active-link");
+    }
+    // Show the first tab by default
+    openTab('tech-stack');
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        
+        function openmenu() {
+            sidemenu.style.right= "0";
+        }
+        function closemenu() {
+            sidemenu.style.right= "-200px";
+        }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwvzLvPnwZSZ0YyVGqeCI2wQqpq_4-mEpjHfX4r_YwZA7x6cACxPhvapCMytIUB0QDOEw/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        const msg = document.getElementById('msg');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully!"
+                    setTimeout (() => {
+                        msg.innerHTML = "";
+                    }, 3000);
+                    form.reset();
+                })
+                .catch(error => {
+                    alert('Error sending message.');
+                    console.error('Error!', error.message);
+                });
+        })
+    </script>
+</body>
+    
+</html>
