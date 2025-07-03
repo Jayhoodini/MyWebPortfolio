@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <button id="light-on-btn" class="mode-toggle-btn" title="Switch to light mode"><i class="fa-solid fa-sun"></i></button>
+    <button id="light-off-btn" class="mode-toggle-btn" title="Switch to dark mode"><i class="fa-solid fa-moon"></i></button>
     <div id="header">
         <div class="container">
             <nav>
@@ -94,7 +96,7 @@
     <!-- --------------------------Portfolio-------------------------- -->
     <div id="portfolio">
         <div class="container">
-            <h1 class="sub-title">Project</h1>
+            <h1 class="sub-title">Projects</h1>
             <div class="work-list">
                 <div class="work">
                     <img src="images/work1.png" alt="Internship Project Screenshot">
@@ -192,6 +194,42 @@
                     console.error('Error!', error.message);
                 });
         })
+    </script>
+
+    <script>
+        // Light/Dark mode toggle with separate buttons
+        const lightOnBtn = document.getElementById('light-on-btn');
+        const lightOffBtn = document.getElementById('light-off-btn');
+        function updateModeButtons() {
+            if(document.body.classList.contains('light-mode')) {
+                lightOnBtn.style.display = 'none';
+                lightOffBtn.style.display = 'inline-flex';
+            } else {
+                lightOnBtn.style.display = 'inline-flex';
+                lightOffBtn.style.display = 'none';
+            }
+        }
+        function setMode(isLight) {
+            if(isLight) {
+                document.body.classList.add('light-mode');
+            } else {
+                document.body.classList.remove('light-mode');
+            }
+            updateModeButtons();
+        }
+        lightOnBtn.addEventListener('click', function() {
+            setMode(true);
+            localStorage.setItem('mode', 'light');
+        });
+        lightOffBtn.addEventListener('click', function() {
+            setMode(false);
+            localStorage.setItem('mode', 'dark');
+        });
+        (function() {
+            const saved = localStorage.getItem('mode');
+            if(saved === 'light') setMode(true);
+            else setMode(false);
+        })();
     </script>
 </body>
     

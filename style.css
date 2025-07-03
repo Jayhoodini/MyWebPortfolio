@@ -17,12 +17,20 @@ body{
     color: hsl(0, 0%, 100%);
 }
 
+body.light-mode {
+    background: hsl(0, 0%, 97%);
+    color: hsl(0, 0%, 0%);
+}
+
 #header{
     width: 100%;
     height: 100vh;
     background-image: url(images/background.png);
     background-size: cover;
     background-position: center;
+}
+body.light-mode #header {
+    background-image: url(images/background.png);
 }
 
 .container{
@@ -35,6 +43,9 @@ body{
     color: hsl(0, 0%, 100%);
     letter-spacing: 2px;
     font-family: 'JetBrains Mono', monospace;
+}
+body.light-mode .logo {
+    color: hsl(0, 0%, 0%);
 }
 
 nav{
@@ -71,6 +82,9 @@ nav ul li a{
     font-weight: 500;
     position: relative;
 }
+body.light-mode nav ul li a {
+    color: hsl(0, 0%, 0%);
+}
 
 nav ul li a::after{
     content: '';
@@ -81,6 +95,9 @@ nav ul li a::after{
     left: 0;
     bottom: -6px;
     transition: 0.5s;
+}
+body.light-mode nav ul li a::after {
+    background-color: hsl(0, 0%, 0%);
 }
 
 nav ul li a:hover::after{
@@ -102,6 +119,9 @@ nav ul li a:hover::after{
 #about{
     padding: 80px 0;
     color: hsl(0, 0%, 67%);
+}
+body.light-mode #about {
+    color: hsl(0, 0%, 33%);
 }
 
 .row{
@@ -129,6 +149,9 @@ nav ul li a:hover::after{
     font-weight: 600;
     color: hsl(0, 0%, 100%);
 }
+body.light-mode .sub-title {
+    color: hsl(0, 0%, 0%);
+}
 
 .tab-titles{
     display: flex;
@@ -152,6 +175,9 @@ nav ul li a:hover::after{
     left: 0;
     bottom: -8px;
     transition: 0.5s;
+}
+body.light-mode .tab-links::after {
+    background-color: hsl(0, 0%, 33%);
 }
 
 .tab-links.active-link::after{
@@ -199,6 +225,13 @@ nav ul li a:hover::after{
     box-shadow: 0 1px 4px rgba(0,0,0,0.12);
     transition: background 0.2s;
     text-decoration: none;
+}
+body.light-mode .tech-item {
+    background: #f3f3f3;
+    color: #222;
+}
+body.light-mode .tech-item span {
+    color: #222;
 }
 
 .tech-item img {
@@ -267,6 +300,9 @@ nav ul li a:hover::after{
     font-size: 14px;
     transition: height 0.5s;
 }
+body.light-mode .layer {
+    background: linear-gradient(rgba(255,255,255,0.7), hsl(0, 0%, 85%));
+}
 
 .layer h3{
     font-weight: 500;
@@ -288,6 +324,10 @@ nav ul li a:hover::after{
     align-items: center;
     justify-content: center;
 }
+body.light-mode .layer a {
+    color: hsl(0, 0%, 100%);
+    background: hsl(0, 0%, 0%);
+}
 
 .work:hover .img{
     transform: scale(1.1);
@@ -308,11 +348,26 @@ nav ul li a:hover::after{
     color: hsl(0, 0%, 100%);
     transition: background 0.5s;
 }
+body.light-mode .btn {
+    color: hsl(0, 0%, 0%);
+    border: 1px solid hsl(0, 0%, 75%);
+}
 
 .btn:hover{
     background: hsl(0, 0%, 25%);
 }
-/* ----------------------------Contact-Me---------------------------- */
+body.light-mode .btn:hover {
+    background: hsl(0, 0%, 85%);
+}
+
+.btn.btn2{
+    display: inline-block;
+    background: hsl(0, 0%, 25%);
+}
+body.light-mode .btn.btn2 {
+    background: hsl(0, 0%, 85%);
+}
+
 .contact-left{
     flex-basis: 35%;
 }
@@ -339,15 +394,15 @@ nav ul li a:hover::after{
     display: inline-block;
     transition:  transform 0.3s;
 }
+body.light-mode .social-icons a {
+    color: hsl(0, 0%, 33%);
+}
 
 .social-icons a:hover{
     color: hsl(0, 0%, 25%);
-    transform: translateY(-5px);
 }
-
-.btn.btn2{
-    display: inline-block;
-    background: hsl(0, 0%, 25%);
+body.light-mode .social-icons a:hover {
+    color: hsl(0, 0%, 0%);
 }
 
 .contact-right{
@@ -369,6 +424,10 @@ form input, form textarea{
     color: hsl(0, 0%, 100%);
     font-size: 18px;
 }
+body.light-mode form input, body.light-mode form textarea {
+    background: hsl(0, 0%, 95%);
+    color: hsl(0, 0%, 0%);
+}
 
 form .btn2 {
     padding: 14px 60px;
@@ -388,6 +447,10 @@ form .btn2 {
     text-align: center;
     font-family: "Roboto", sans-serif;
 }
+body.light-mode .footer {
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 0%);
+}
 
 /* ----------------------------CSS-FOR-SMALL-SCREEN------------------------- */
 nav .fa-solid{
@@ -396,6 +459,9 @@ nav .fa-solid{
 
 @media only screen and (max-width: 600px){
     #header{
+        background-image: url(images/phone-background.png);
+    }
+    body.light-mode #header {
         background-image: url(images/phone-background.png);
     }
     .header-text{
@@ -512,4 +578,36 @@ nav .fa-solid{
     color: hsl(104, 39%, 56%);
     margin-top: -40px;
     display: block;
+}
+
+.mode-toggle-btn {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: inherit;
+    padding: 0 8px;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+.mode-toggle-btn#light-off-btn {
+    left: 16px;
+}
+.mode-toggle-btn#light-on-btn {
+    left: 16px;
+}
+.mode-toggle-btn:focus {
+    outline: 2px solid #888;
+}
+
+body.light-mode #light-on-btn {
+    display: none;
+}
+body:not(.light-mode) #light-off-btn {
+    display: none;
 }
