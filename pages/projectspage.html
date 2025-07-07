@@ -33,60 +33,65 @@
         <div class="container">
             <nav>
                 <ul id="sidemenu">
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html">Projects</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-            <a href="#" class="btn btn-primary">View More</a>
+    <div id="projects">
+        <div class="container card-container">
+            <div class="card">
+                <img src="../images/work1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Practicum</h5>
+                    <p class="card-text">This is the project we did with my team on our Internship.</p>
+                    <a href="practicumpage.html" class="btn btn-primary">More Details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../images/work2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Carbon Predictor</h5>
+                    <p class="card-text">A web application for predicting future case.</p>
+                    <a href="CFPpage.html" class="btn btn-primary">More Details</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-            <a href="#" class="btn btn-primary">View More</a>
-        </div>
-    </div>
+    
 
 
   <!-- Light/Dark mode script -->
-  <script>
-    const lightOnBtn = document.getElementById('light-on-btn');
-    const lightOffBtn = document.getElementById('light-off-btn');
+    <script>
+        const lightOnBtn = document.getElementById('light-on-btn');
+        const lightOffBtn = document.getElementById('light-off-btn');z
 
-    function updateModeButtons() {
-      lightOnBtn.style.display = document.body.classList.contains('light-mode') ? 'none' : 'inline-flex';
-      lightOffBtn.style.display = document.body.classList.contains('light-mode') ? 'inline-flex' : 'none';
-    }
+        function updateModeButtons() {
+            lightOnBtn.style.display = document.body.classList.contains('light-mode') ? 'none' : 'inline-flex';
+            lightOffBtn.style.display = document.body.classList.contains('light-mode') ? 'inline-flex' : 'none';
+        }
 
-    function setMode(isLight) {
-      document.body.classList.toggle('light-mode', isLight);
-      updateModeButtons();
-    }
+        function setMode(isLight) {
+            document.body.classList.toggle('light-mode', isLight);
+            updateModeButtons();
+        }
 
-    lightOnBtn.addEventListener('click', () => {
-      setMode(true);
-      localStorage.setItem('mode', 'light');
-    });
+        lightOnBtn.addEventListener('click', () => {
+            setMode(true);
+            localStorage.setItem('mode', 'light');
+        });
 
-    lightOffBtn.addEventListener('click', () => {
-      setMode(false);
-      localStorage.setItem('mode', 'dark');
-    });
+        lightOffBtn.addEventListener('click', () => {
+            setMode(false);
+            localStorage.setItem('mode', 'dark');
+        });
 
-    (() => {
-      const saved = localStorage.getItem('mode');
-      setMode(saved === 'light');
-    })();
-  </script>
+        (() => {
+            const saved = localStorage.getItem('mode');
+            setMode(saved === 'light');
+        })();
+    </script>
 </body>
 </html>
