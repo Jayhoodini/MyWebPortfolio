@@ -382,6 +382,19 @@ body.light-mode .btn.btn2 {
     font-size: 25px;
 }
 
+.contact-left a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-left a:hover {
+    text-decoration: underline;
+    color: hsl(0, 0%, 67%); /* or your preferred highlight color */
+}
+body.light-mode .contact-left a:hover {
+    color: hsl(0, 0%, 33%);
+}
+
 .social-icons{
     margin-top: 30px;
 }
