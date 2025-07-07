@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title>
+  <link rel="stylesheet" href="pagestyle.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <!-- Top bar with back and mode toggle buttons -->
+    <div class="top-bar">
+        <a href="../index.html" class="back-button" title="Go back">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <div class="mode-buttons">
+            <button id="light-on-btn" class="mode-toggle-btn" title="Switch to light mode">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+            <button id="light-off-btn" class="mode-toggle-btn" title="Switch to dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="../index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <a href="#" class="btn btn-primary">View More</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <a href="#" class="btn btn-primary">View More</a>
+        </div>
+    </div>
+
+
+  <!-- Light/Dark mode script -->
+  <script>
+    const lightOnBtn = document.getElementById('light-on-btn');
+    const lightOffBtn = document.getElementById('light-off-btn');
+
+    function updateModeButtons() {
+      lightOnBtn.style.display = document.body.classList.contains('light-mode') ? 'none' : 'inline-flex';
+      lightOffBtn.style.display = document.body.classList.contains('light-mode') ? 'inline-flex' : 'none';
+    }
+
+    function setMode(isLight) {
+      document.body.classList.toggle('light-mode', isLight);
+      updateModeButtons();
+    }
+
+    lightOnBtn.addEventListener('click', () => {
+      setMode(true);
+      localStorage.setItem('mode', 'light');
+    });
+
+    lightOffBtn.addEventListener('click', () => {
+      setMode(false);
+      localStorage.setItem('mode', 'dark');
+    });
+
+    (() => {
+      const saved = localStorage.getItem('mode');
+      setMode(saved === 'light');
+    })();
+  </script>
+</body>
+</html>
