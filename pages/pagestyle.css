@@ -71,6 +71,14 @@ body.light-mode .page-content-box {
   padding: 20px 10%;
 }
 
+p {
+  text-align: justify;
+  color: hsl(0, 0%, 80%);
+}
+
+body.light-mode p {
+  color: hsl(0, 0%, 20%);
+}
 /* ------------------ Navigation ------------------ */
 nav {
   display: flex;
