@@ -42,8 +42,33 @@ body.light-mode #header {
   background-color: transparent;
 }
 
-.container{
-    padding: 10px 10%;
+/* Page Content Box Design */
+.page-content-box {
+  flex: 1 1 300px; /* Flexible width with a minimum of 300px */
+  background-color: hsl(0, 0%, 10%);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode styling */
+body.light-mode .page-content-box {
+  background-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 10%);
+}
+
+/* Container row layout with gap */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Add gap between content boxes */
+}
+
+/* Ensure consistent spacing for container */
+.container {
+  padding: 20px 10%;
 }
 
 /* ------------------ Navigation ------------------ */
@@ -249,5 +274,9 @@ body.light-mode .card-text {
   .card-container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .row {
+    flex-direction: column;
   }
 }
