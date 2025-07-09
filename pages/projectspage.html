@@ -45,7 +45,7 @@
                 <img src="../images/work1.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Practicum</h5>
-                    <p class="card-text">This is the project we did with my team on our Internship.</p>
+                    <p class="card-text">This is the project we did with my team on our Internship at PetroEnergy Resources Corporation.</p>
                     <a href="practicumpage.html" class="btn btn-primary">More Details</a>
                 </div>
             </div>
@@ -53,8 +53,14 @@
                 <img src="../images/work2.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Carbon Predictor</h5>
-                    <p class="card-text">A web application for predicting future case.</p>
-                    <a href="CFPpage.html" class="btn btn-primary">More Details</a>
+                    <p class="card-text">A web application for predicting future case of carbon emissions.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../images/work3.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Cirrhosis Predictor</h5>
+                    <p class="card-text">A website for predicting cirrhosis patient survivability.</p>
                 </div>
             </div>
         </div>
@@ -65,32 +71,38 @@
 
   <!-- Light/Dark mode script -->
     <script>
+        // Light/Dark mode toggle with separate buttons
         const lightOnBtn = document.getElementById('light-on-btn');
-        const lightOffBtn = document.getElementById('light-off-btn');z
-
+        const lightOffBtn = document.getElementById('light-off-btn');
         function updateModeButtons() {
-            lightOnBtn.style.display = document.body.classList.contains('light-mode') ? 'none' : 'inline-flex';
-            lightOffBtn.style.display = document.body.classList.contains('light-mode') ? 'inline-flex' : 'none';
+            if(document.body.classList.contains('light-mode')) {
+                lightOnBtn.style.display = 'none';
+                lightOffBtn.style.display = 'inline-flex';
+            } else {
+                lightOnBtn.style.display = 'inline-flex';
+                lightOffBtn.style.display = 'none';
+            }
         }
-
         function setMode(isLight) {
-            document.body.classList.toggle('light-mode', isLight);
+            if(isLight) {
+                document.body.classList.add('light-mode');
+            } else {
+                document.body.classList.remove('light-mode');
+            }
             updateModeButtons();
         }
-
-        lightOnBtn.addEventListener('click', () => {
+        lightOnBtn.addEventListener('click', function() {
             setMode(true);
             localStorage.setItem('mode', 'light');
         });
-
-        lightOffBtn.addEventListener('click', () => {
+        lightOffBtn.addEventListener('click', function() {
             setMode(false);
             localStorage.setItem('mode', 'dark');
         });
-
-        (() => {
+        (function() {
             const saved = localStorage.getItem('mode');
-            setMode(saved === 'light');
+            if(saved === 'light') setMode(true);
+            else setMode(false);
         })();
     </script>
 </body>
