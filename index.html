@@ -26,7 +26,7 @@
             </nav>
             <div class="header-text">
                 <p>Full-Stack Developer</p>
-                <h1>Hi, I'm <span>Jeffrey</span></h1>
+                <h1 class="typing-text">Hi, I'm Jeffrey</h1>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>My name is Jeffrey Cuevas, and I am a Computer Science student at the Mapúa Malayan Colleges Laguna. I am always eager to learn new skills and improve my knowledge in the field.</p>
+                    <p>My name is Jeffrey Cuevas, a Full-Stack Developer major in Computer Science from Mapúa Malayan Colleges Laguna. PH-based freelance developer.</p>
 
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="openTab('tech-stack')">Tech Stack</p>
@@ -279,6 +279,13 @@
 
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
+    </script>
+
+    <script>
+    // Automatically remove blink after typing ends
+    setTimeout(() => {
+        document.querySelector('.typing-text').classList.add('done');
+    }, 3000); // adjust to match typing duration (2s + 1s delay)
     </script>
 
 </body>
