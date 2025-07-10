@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeffrey Portfolio</title>
+    <link rel="icon" href="images/icon.jpg" type="image/jpeg" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -176,15 +177,14 @@
     </script>
 
     <script>
-        var sidemenu = document.getElementById("sidemenu");
-        
         function openmenu() {
-            sidemenu.style.right= "0";
+            document.getElementById("sidemenu").classList.add("open");
         }
         function closemenu() {
-            sidemenu.style.right= "-200px";
+            document.getElementById("sidemenu").classList.remove("open");
         }
     </script>
+
 
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwvzLvPnwZSZ0YyVGqeCI2wQqpq_4-mEpjHfX4r_YwZA7x6cACxPhvapCMytIUB0QDOEw/exec'
@@ -244,6 +244,26 @@
             else setMode(false);
         })();
     </script>
+
+    <script>
+        let lastScrollTop = 0;
+        const nav = document.querySelector("nav");
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+            // scrolling down -> hide nav
+            nav.style.top = "-100px";
+            } else {
+            // scrolling up -> show nav
+            nav.style.top = "0";
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+    </script>
+
 </body>
     
 </html>

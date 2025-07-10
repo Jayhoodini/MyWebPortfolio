@@ -48,12 +48,18 @@ body.light-mode .logo {
     color: hsl(0, 0%, 0%);
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: relative;
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: fixed; /* fixed position */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: transparent;
+  transition: top 0.3s ease;
 }
 
 .logo{
@@ -504,20 +510,31 @@ nav .fa-solid{
         z-index: 1;
         cursor: pointer;
     }
-    nav ul{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        background: hsl(0, 0%, 25%);
-        position: fixed;
-        top: 0;
-        right: -200px;
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
-        transition: right 0.5s;
+    nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.4); /* semi-transparent */
+    backdrop-filter: blur(10px);   /* blur effect */
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 999;
+    transition: right 0.5s, background 0.3s ease;
     }
+    body.light-mode nav ul {
+        background: rgba(255, 255, 255, 0.4); /* light mode */
+        backdrop-filter: blur(10px);
+    }
+
+    nav ul.open {
+        right: 0;
+    }
+
+
     nav ul li{
         display: block;
         margin: 25px;
