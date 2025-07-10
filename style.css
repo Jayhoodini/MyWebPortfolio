@@ -114,6 +114,11 @@ nav ul li a:hover::after{
 .header-text{
     margin-top: 20%;
     font-size: 30px;
+    color: hsl(0, 0%, 70%);
+}
+
+body.light-mode .header-text {
+    color: hsl(0, 0%, 30%);
 }
 
 .header-text h1{
@@ -157,6 +162,10 @@ nav ul li a:hover::after{
   }
 }
 
+body.light-mode .typing-text {
+    color: hsl(0, 0%, 0%);
+    border-right: 2px solid hsl(0, 0%, 0%);
+}
 
 /*----------------------------About-me----------------------------*/
 #about{
