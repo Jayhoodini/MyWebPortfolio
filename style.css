@@ -191,12 +191,9 @@ body.light-mode .tab-links::after {
 }
 
 .tab-contents ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+    color: hsl(0, 0%, 60%);
 }
 
 .tab-contents ul li{
@@ -205,8 +202,16 @@ body.light-mode .tab-links::after {
 }
 
 .tab-contents ul li span{
-    color: hsl(0, 0%, 70%);
+    color: hsl(0, 0%, 100%);
     font-size: 14px;
+}
+
+body.light-mode .tab-contents ul {
+  color: hsl(0, 0%, 40%);
+}
+
+body.light-mode .tab-contents ul li span {
+  color: hsl(0, 0%, 0%);
 }
 
 .tech-stack {
