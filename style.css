@@ -529,7 +529,7 @@ nav .fa-solid{
     display: none;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 700px){
     #header{
         background-image: url(images/phone-background.png);
     }
@@ -692,7 +692,7 @@ nav .fa-solid{
     left: 16px;
 }
 .mode-toggle-btn:focus {
-    outline: 2px solid #888;
+    outline: 2px solid hsl(0, 0%, 53.3%);
 }
 
 body.light-mode #light-on-btn {
