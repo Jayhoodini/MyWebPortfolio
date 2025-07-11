@@ -258,7 +258,7 @@ body.light-mode .tab-contents ul li span {
 
 .tech-stack {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 16px;
     margin-top: 16px;
 }
@@ -529,7 +529,7 @@ nav .fa-solid{
     display: none;
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 600px){
     #header{
         background-image: url(images/phone-background.png);
     }
@@ -593,11 +593,16 @@ nav .fa-solid{
         cursor: pointer;
     }
 
+    .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+
     .tech-stack {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-        margin-top: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 12px;
     }
 
     .tech-item {
@@ -652,8 +657,15 @@ nav .fa-solid{
     }
     .tab-links{
         font-size: 16px;
-        margin-right: 20px;
+        margin-right: 0;
+        margin-bottom: 10px;
     }
+    .tab-titles {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
 
     .contact-left, .contact-right{
         flex-basis: 100%;
